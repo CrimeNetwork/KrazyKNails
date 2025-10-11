@@ -5,7 +5,3 @@ and see her experience.
 
 Crime Network has no relation to the people, assets, or names associated with KrazyK Nails.
 
-## Fork
-
-Forked from Codewithsadee
-Codewithsadee's [Twitter](https://www.x.com/codewithsadee_).
