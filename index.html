@@ -141,25 +141,28 @@
         - #NAVBAR
       -->
 
-      <nav class="navbar">
+<nav class="navbar">
+  <ul class="navbar-list">
+    <li class="navbar-item">
+      <button class="navbar-link active" data-link="about.html">About</button>
+    </li>
+    <li class="navbar-item">
+      <button class="navbar-link" data-link="skills.html">Skills</button>
+    </li>
+    <li class="navbar-item">
+      <button class="navbar-link" data-link="gallery.html">Gallery</button>
+    </li>
+  </ul>
+</nav>
 
-        <ul class="navbar-list">
+<script>
+  document.querySelectorAll('[data-link]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      window.location.href = btn.getAttribute('data-link');
+    });
+  });
+</script>
 
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Skills</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Gallery</button>
-          </li>
-
-        </ul>
-
-      </nav>
 
 
 
