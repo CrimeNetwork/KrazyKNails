@@ -1,32 +1,27 @@
-vCard - Personal Portfolio
+KC's - Nails
 
 # sidebar
 
-alt = Richard hanrick
-Richard hanrick
-Web developer
+alt = Kenzie Childress
+Mackenzie Childress
+Nail technician
 
 Show Contacts
 
-Email
+Instagram
 richard@example.com
 
-Phone
+Snapcaht
 +1 (213) 352-2795
 
-Birthday
-June 23, 1982
-
 Location
-Sacramento, California, USA
+Portsmouth, Ohio, USA
 
 # navbar
 
 About
-Resume
-Portfolio
-Blog
-Contact
+Skills
+Gallery
 
 # about
 
