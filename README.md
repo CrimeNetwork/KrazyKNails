@@ -8,4 +8,4 @@ Crime Network has no relation to the people, assets, or names associated with Kr
 ## Fork
 
 Forked from Codewithsadee
-Codewithsadee's Twitter - [Twitter](https://www.x.com/codewithsadee_).
+Codewithsadee's [Twitter](https://www.x.com/codewithsadee_).
