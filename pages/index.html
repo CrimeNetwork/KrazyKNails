@@ -36,6 +36,7 @@
       padding: 1rem 2rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.5);
       z-index: 100;
+      flex-wrap: wrap; /* mobile-friendly */
     }
 
     nav h1 {
@@ -46,8 +47,14 @@
       text-shadow: 0 0 15px #ffc0cb;
     }
 
+    nav .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
     nav .nav-links a {
-      margin-left: 1rem;
       padding: 0.5rem 1rem;
       border-radius: 5px;
       transition: 0.3s;
@@ -61,13 +68,15 @@
 
     /* Hero Section */
     main {
-      padding-top: 120px; /* navbar height */
+      padding-top: 140px; /* Adjust for fixed navbar height */
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: calc(100vh - 120px);
+      min-height: calc(100vh - 140px);
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
 
     main h2 {
@@ -105,26 +114,27 @@
     footer {
       background-color: #1f1f1f;
       border-top: 2px solid #ffc0cb;
-      padding: 1rem 2rem;
+      padding: 0.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      font-size: 0.85rem; /* smaller footer */
     }
 
     footer p {
       margin: 0;
-      font-size: 0.9rem;
     }
 
     footer a {
       background-color: #ffc0cb;
       color: black;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 1rem;
       border-radius: 8px;
       font-weight: bold;
       box-shadow: 0 0 15px #ffc0cb;
       transition: 0.3s;
+      font-size: 0.9rem;
     }
 
     footer a:hover {
@@ -138,7 +148,7 @@
       main p { font-size: 1rem; }
       .btn-glow { font-size: 1rem; padding: 0.6rem 1.5rem; }
       nav h1 { font-size: 1.5rem; }
-      nav .nav-links a { margin-left: 0.5rem; padding: 0.4rem 0.8rem; font-size: 0.9rem; }
+      nav .nav-links { margin-top: 0.5rem; justify-content: center; }
     }
   </style>
 </head>
