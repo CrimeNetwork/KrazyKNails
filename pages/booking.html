@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment - KrazyK's Nails</title>
+<link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon">
+<style>
+  *,*::before,*::after{box-sizing:border-box;}
+  body{display:flex;flex-direction:column;min-height:100vh;margin:0;font-family:Arial,sans-serif;background-color:#2d2d2d;color:white;}
+  a{text-decoration:none;color:white;} .glow{text-shadow:0 0 15px #ffc0cb;}
+  nav{position:fixed;top:0;left:0;width:100%;background-color:#1f1f1f;display:flex;justify-content:space-between;align-items:center;padding:0.8rem 5%;z-index:100;flex-wrap:wrap;}
+  nav h1{font-size:1.5rem;font-weight:bold;margin:0;color:#ffc0cb;text-shadow:0 0 12px #ffc0cb;}
+  .hamburger{display:none; flex-direction:column; cursor:pointer; gap:5px;}
+  .hamburger div{width:25px;height:3px;background-color:#ffc0cb; transition:0.3s;}
+  .nav-links{display:flex; gap:0.5rem;}
+  .nav-links a{font-size:0.95rem; padding:0.4rem 0.8rem; border-radius:5px; white-space:nowrap; flex-shrink:0;}
+  .nav-links a:hover{background-color:#ffc0cb; color:black; text-shadow:0 0 10px #ffc0cb;}
+  main{flex:1; padding-top:100px; padding-left:1rem; padding-right:1rem; text-align:center; display:flex; flex-direction:column; align-items:center; gap:2rem; max-width:800px; margin:auto;}
+  main h2{font-size:2.5rem;color:#ffc0cb;text-shadow:0 0 15px #ffc0cb;}
+  .contact-info{display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem; text-align:center;}
+  .contact-info a{color:#ffc0cb; font-weight:bold; transition:0.3s;}
+  .contact-info a:hover{color:#ffb6c1; text-shadow:0 0 10px #ffc0cb;}
+  form{display:flex; flex-direction:column; gap:1rem; width:100%;}
+  input, textarea{padding:0.8rem; border-radius:6px; border:none; font-size:1rem;}
+  textarea{resize:none; min-height:120px;}
+  .btn-glow{display:inline-block;background-color:#ffc0cb;color:black;padding:0.6rem 1.5rem;border-radius:8px;font-weight:bold;box-shadow:0 0 15px #ffc0cb;transition:0.3s;border:none;cursor:pointer; align-self:center;}
+  .btn-glow:hover{background-color:#ffb6c1;box-shadow:0 0 25px #ffc0cb;}
+  footer{flex-shrink:0;background-color:#1f1f1f;border-top:2px solid #ffc0cb;padding:0.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;font-size:0.8rem;}
+  footer a{background-color:#ffc0cb;color:black;padding:0.3rem 0.8rem;border-radius:6px;font-weight:bold;box-shadow:0 0 10px #ffc0cb;transition:0.3s;font-size:0.8rem;}
+  footer a:hover{background-color:#ffb6c1;box-shadow:0 0 20px #ffc0cb;}
+  @media(max-width:768px){
+    .hamburger{display:flex;}
+    .nav-links{display:none; flex-direction:column; width:100%; margin-top:0.5rem; gap:0.3rem;}
+    .nav-links.active{display:flex;}
+    main h2{font-size:2rem;}
+    footer{flex-direction:column; gap:0.5rem; text-align:center;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <h1>KrazyK's Nails</h1>
+  <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
+  <div class="nav-links" id="nav-links">
+    <a href="index">Home</a>
+    <a href="about">About</a>
+    <a href="gallery">Gallery</a>
+    <a href="skills">Skills</a>
+  </div>
+</nav>
+
+<main>
+  <h2>Book an Appointment</h2>
+  <div class="contact-info">
+    <p>Phone: <a href="tel:+1234567890">Number</a></p>
+    <p>Instagram: <a href="https://instagram.com/yourhandle" target="_blank">@insta</a></p>
+    <p>Snapchat: <a href="https://snapchat.com/add/yourhandle" target="_blank">@snap</a></p>
+    <p>Facebook: <a href="https://facebook.com/yourpage" target="_blank">@facebook</a></p>
+  </div>
+
+  <form id="appointmentForm">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" placeholder="Jane Doe" required>
+
+    <label for="service">Service Requested</label>
+    <input type="text" id="service" placeholder="Full set, manicure, etc." required>
+
+    <label for="date">Preferred Date</label>
+    <input type="date" id="date" required>
+
+    <label for="time">Preferred Time</label>
+    <input type="time" id="time" required>
+
+    <label for="msg">Message Template</label>
+    <textarea id="msg" placeholder="Hey my name is [name] I'd like to book a [service] on [date] at [time], please confirm availability. You can reach me at [phone number]"></textarea>
+
+    <button type="submit" class="btn-glow">Send Request</button>
+  </form>
+</main>
+
+<footer>
+  <p>© 2025 Crime Network, All rights reserved.</p>
+  <a href="policies">Policies</a>
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', ()=>{ navLinks.classList.toggle('active'); });
+
+// Email sending via mailto
+document.getElementById('appointmentForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const service = document.getElementById('service').value;
+    const date = document.getElementById('date').value;
+    const time = document.getElementById('time').value;
+    const msg = document.getElementById('msg').value;
+
+    const email = "your-email@example.com"; // replace with your email
+    const subject = encodeURIComponent(`Appointment Request from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nService: ${service}\nDate: ${date}\nTime: ${time}\nMessage:\n${msg}`);
+
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+});
+</script>
+</body>
+</html>
