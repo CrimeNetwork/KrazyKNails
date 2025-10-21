@@ -1,53 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Policies - KrazyK's Nails</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    .glow { text-shadow: 0 0 15px rgba(255,182,193,1); }
-    .btn-glow { box-shadow: 0 0 20px rgba(255,182,193,1); transition: all 0.3s; }
-    .btn-glow:hover { box-shadow: 0 0 30px rgba(255,182,193,1); background-color: #ffc0cb; color: black; }
-    p, h2, h1, li, a { color: white; }
-    nav a:hover { color: #ffc0cb; text-shadow: 0 0 10px rgba(255,182,193,1); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policies - KrazyK's Nails</title>
+<link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon">
+<style>
+  *,*::before,*::after{box-sizing:border-box;}
+  body{display:flex;flex-direction:column;min-height:100vh;margin:0;font-family:Arial,sans-serif;background-color:#2d2d2d;color:white;}
+  a{text-decoration:none;color:white;}.glow{text-shadow:0 0 15px #ffc0cb;}
+  nav{position:fixed;top:0;left:0;width:100%;background-color:#1f1f1f;display:flex;justify-content:space-between;align-items:center;padding:0.8rem 5%;z-index:100;flex-wrap:wrap;}
+  nav h1{font-size:1.5rem;font-weight:bold;margin:0;color:#ffc0cb;text-shadow:0 0 12px #ffc0cb;}
+  .hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px;}
+  .hamburger div{width:25px;height:3px;background-color:#ffc0cb;transition:0.3s;}
+  .nav-links{display:flex;gap:0.5rem;}
+  .nav-links a{font-size:0.95rem;padding:0.4rem 0.8rem;border-radius:5px;white-space:nowrap;flex-shrink:0;}
+  .nav-links a:hover{background-color:#ffc0cb;color:black;text-shadow:0 0 10px #ffc0cb;}
+  main{flex:1;padding-top:100px;padding-left:1rem;padding-right:1rem;text-align:left;max-width:900px;margin:auto;display:flex;flex-direction:column;gap:1rem;}
+  main h2{font-size:2.5rem;color:#ffc0cb;text-shadow:0 0 15px #ffc0cb;text-align:center;}
+  .btn-glow{display:inline-block;background-color:#ffc0cb;color:black;padding:0.6rem 1.5rem;border-radius:8px;font-weight:bold;box-shadow:0 0 15px #ffc0cb;transition:0.3s;align-self:center;margin-top:1rem;}
+  .btn-glow:hover{background-color:#ffb6c1;box-shadow:0 0 25px #ffc0cb;}
+  footer{flex-shrink:0;background-color:#1f1f1f;border-top:2px solid #ffc0cb;padding:0.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;font-size:0.8rem;}
+  footer a{background-color:#ffc0cb;color:black;padding:0.3rem 0.8rem;border-radius:6px;font-weight:bold;box-shadow:0 0 10px #ffc0cb;transition:0.3s;font-size:0.8rem;}
+  footer a:hover{background-color:#ffb6c1;box-shadow:0 0 20px #ffc0cb;}
+  @media(max-width:768px){.hamburger{display:flex;}.nav-links{display:none;flex-direction:column;width:100%;margin-top:0.5rem;gap:0.3rem;}.nav-links.active{display:flex;} main h2{font-size:2rem;} footer{flex-direction:column;gap:0.5rem;text-align:center;}}
+</style>
 </head>
-<body class="bg-gray-800 text-white font-sans">
+<body>
+<nav>
+<h1>KrazyK's Nails</h1>
+<div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
+<div class="nav-links" id="nav-links">
+<a href="index">Home</a>
+<a href="about">About</a>
+<a href="gallery">Gallery</a>
+<a href="skills">Skills</a>
+</div>
+</nav>
 
-  <nav class="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-gray-800 shadow-md z-50">
-    <h1 class="glow text-2xl font-bold">KrazyK's Nails</h1>
-    <div class="flex gap-4 font-medium">
-      <a href="index.html" class="glow">Home</a>
-      <a href="about.html" class="glow">About</a>
-      <a href="gallery.html" class="glow">Gallery</a>
-      <a href="skills.html" class="glow">Skills</a>
-    </div>
-  </nav>
+<main>
+<h2>Policies & Terms</h2>
+<h3>Refund Policy</h3>
+<p>All services are non-refundable once completed. If there is a service error, please contact us immediately so we can correct it.</p>
+<h3>Cancellation Policy</h3>
+<p>Cancellations should be made at least 24 hours in advance. Late cancellations may result in a forfeited deposit or full charge.</p>
+<h3>Service Terms</h3>
+<p>Clients must arrive on time and follow all safety guidelines. We reserve the right to refuse service in certain circumstances for health and safety reasons.</p>
+</main>
 
-  <main class="pt-32 px-6 max-w-3xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6 glow">Policies</h2>
+<footer>
+<p>© 2025 Crime Network, All rights reserved.</p>
+<a href="policies">Policies</a>
+</footer>
 
-    <section class="mb-6">
-      <h3 class="text-xl font-semibold mb-2 glow">Refund & Cancellation</h3>
-      <p>Appointments can be canceled or rescheduled up to 24 hours in advance. Late cancellations or no-shows may not be eligible for refunds. Please contact us as soon as possible if you need to change your appointment.</p>
-    </section>
-
-    <section class="mb-6">
-      <h3 class="text-xl font-semibold mb-2 glow">Service Terms</h3>
-      <p>All nail services are performed following strict hygiene protocols. Any issues with your service must be reported within 48 hours for resolution. Prices and services may vary depending on design complexity.</p>
-    </section>
-
-    <section class="mb-6">
-      <h3 class="text-xl font-semibold mb-2 glow">General</h3>
-      <p>By booking an appointment with KrazyK’s Nails, you agree to follow our policies and uphold professional conduct during your visit. We aim to provide a positive experience for all clients.</p>
-    </section>
-  </main>
-
-  <footer class="flex justify-between items-center py-4 px-6 bg-gray-800 border-t border-pink-300 text-sm flex-wrap text-white">
-    <p class="glow">© 2025 KrazyK’s Nails. All rights reserved.</p>
-    <a href="policies.html" class="btn-glow bg-pink-300 text-black px-4 py-1 rounded-full">Policies</a>
-  </footer>
-
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', ()=>{ navLinks.classList.toggle('active'); });
+</script>
 </body>
 </html>
