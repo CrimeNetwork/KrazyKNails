@@ -52,6 +52,7 @@
       flex-wrap: wrap;
       gap: 0.5rem;
       justify-content: flex-end;
+      width: auto;
     }
 
     nav .nav-links a {
@@ -69,13 +70,13 @@
 
     /* Hero Section */
     main {
-      padding-top: 140px; /* adjust for fixed navbar */
+      padding-top: 160px; /* adjust for fixed navbar height */
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: calc(100vh - 140px);
+      min-height: calc(100vh - 160px);
       padding-left: 1rem;
       padding-right: 1rem;
     }
@@ -145,11 +146,28 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      nav .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.3rem;
+        width: 100%;
+      }
+      nav .nav-links a {
+        width: 90%;
+        text-align: center;
+      }
+
       main h2 { font-size: 2.2rem; }
       main p { font-size: 1rem; }
       .btn-glow { font-size: 1rem; padding: 0.6rem 1.5rem; }
-      nav h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-      nav .nav-links { justify-content: center; gap: 0.3rem; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   </style>
