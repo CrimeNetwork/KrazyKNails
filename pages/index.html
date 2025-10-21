@@ -4,46 +4,150 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KrazyK's Nails</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    /* Embedded CSS */
-    body { margin: 0; font-family: sans-serif; }
-    .glow { text-shadow: 0 0 20px rgba(255,182,193,1); }
-    .btn-glow { 
-      background-color: #ffc0cb; 
-      color: black; 
-      padding: 0.75rem 1.5rem; 
-      border-radius: 0.5rem; 
-      text-decoration: none; 
+    /* Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #2d2d2d; /* dark grey */
+      color: white;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Glow effect */
+    .glow {
+      text-shadow: 0 0 20px #ffc0cb;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #1f1f1f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      z-index: 100;
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0;
+      color: #ffc0cb;
+      text-shadow: 0 0 15px #ffc0cb;
+    }
+
+    nav .nav-links a {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav .nav-links a:hover {
+      background-color: #ffc0cb;
+      color: black;
+      text-shadow: 0 0 10px #ffc0cb;
+    }
+
+    /* Hero Section */
+    main {
+      padding-top: 120px; /* navbar height */
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 120px);
+    }
+
+    main h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #ffc0cb;
+      text-shadow: 0 0 20px #ffc0cb;
+    }
+
+    main p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .btn-glow {
       display: inline-block;
-      box-shadow: 0 0 20px rgba(255,182,193,1);
-      transition: all 0.3s;
-      font-size: 1.25rem;
+      background-color: #ffc0cb;
+      color: black;
+      padding: 0.8rem 2rem;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 0 20px #ffc0cb;
+      transition: 0.3s;
     }
-    .btn-glow:hover { 
-      box-shadow: 0 0 35px rgba(255,182,193,1); 
-      background-color: #ffb6c1; 
-      color: black; 
+
+    .btn-glow:hover {
+      background-color: #ffb6c1;
+      box-shadow: 0 0 35px #ffc0cb;
     }
-    nav { background-color: #2d2d2d; z-index: 50; }
-    nav a { color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; text-decoration: none; transition: all 0.3s; }
-    nav a:hover { background-color: #ffc0cb; color: black; text-shadow: 0 0 10px rgba(255,182,193,1); }
-    main { padding-top: 100px; }
-    footer { background-color: #2d2d2d; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; border-top: 2px solid #ffc0cb; }
-    footer p { margin: 0; }
+
+    /* Footer */
+    footer {
+      background-color: #1f1f1f;
+      border-top: 2px solid #ffc0cb;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      background-color: #ffc0cb;
+      color: black;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 0 15px #ffc0cb;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      background-color: #ffb6c1;
+      box-shadow: 0 0 30px #ffc0cb;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      main h1, main h2 { font-size: 2.5rem; }
-      .btn-glow { font-size: 1rem; padding: 0.5rem 1rem; }
-      footer { flex-direction: column; gap: 0.5rem; }
+      main h2 { font-size: 2.2rem; }
+      main p { font-size: 1rem; }
+      .btn-glow { font-size: 1rem; padding: 0.6rem 1.5rem; }
+      nav h1 { font-size: 1.5rem; }
+      nav .nav-links a { margin-left: 0.5rem; padding: 0.4rem 0.8rem; font-size: 0.9rem; }
     }
   </style>
 </head>
-<body class="bg-gray-800 text-white">
+<body>
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md">
-    <h1 class="glow text-2xl font-bold">KrazyK's Nails</h1>
-    <div class="flex flex-wrap gap-4 font-medium">
+  <nav>
+    <h1>KrazyK's Nails</h1>
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
@@ -52,18 +156,16 @@
   </nav>
 
   <!-- Hero Section -->
-  <main class="flex flex-col items-center justify-center text-center min-h-screen px-6">
-    <h2 class="text-5xl md:text-6xl font-extrabold glow mb-6">Welcome to KrazyK's Nails 💅</h2>
-    <p class="max-w-xl text-lg md:text-xl mb-8 opacity-90">
-      Home-based nail artistry bringing creativity, color, and confidence to your fingertips.
-    </p>
+  <main>
+    <h2>Welcome to KrazyK's Nails 💅</h2>
+    <p>Home-based nail artistry bringing creativity, color, and confidence to your fingertips.</p>
     <a href="about.html" class="btn-glow">Book an Appointment</a>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p class="glow">© 2025 KrazyK’s Nails. All rights reserved.</p>
-    <a href="policies.html" class="btn-glow">Policies</a>
+    <p>© 2025 KrazyK’s Nails. All rights reserved.</p>
+    <a href="policies.html">Policies</a>
   </footer>
 
 </body>
