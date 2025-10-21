@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills - KrazyK's Nails</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .glow { text-shadow: 0 0 15px rgba(255,182,193,1); }
+    .btn-glow { box-shadow: 0 0 20px rgba(255,182,193,1); transition: all 0.3s; }
+    .btn-glow:hover { box-shadow: 0 0 30px rgba(255,182,193,1); background-color: #ffc0cb; color: black; }
+    p, h2, h1, li, a { color: white; }
+    .card { background-color: #2d2d2d; border: 2px solid #ffc0cb; border-radius: 0.5rem; padding: 1rem; box-shadow: 0 0 20px rgba(255,182,193,0.5); transition: all 0.3s; }
+    .card:hover { box-shadow: 0 0 30px rgba(255,182,193,0.8); }
+    nav a:hover { color: #ffc0cb; text-shadow: 0 0 10px rgba(255,182,193,1); }
+  </style>
+</head>
+<body class="bg-gray-800 text-white font-sans">
+
+  <nav class="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-gray-800 shadow-md z-50">
+    <h1 class="glow text-2xl font-bold">KrazyK's Nails</h1>
+    <div class="flex gap-4 font-medium">
+      <a href="index.html" class="glow">Home</a>
+      <a href="about.html" class="glow">About</a>
+      <a href="gallery.html" class="glow">Gallery</a>
+      <a href="skills.html" class="glow">Skills</a>
+    </div>
+  </nav>
+
+  <main class="pt-32 px-6 text-center min-h-screen">
+    <h2 class="text-3xl font-bold mb-10 glow">Skills & Specialties</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div class="card">Acrylic & Gel Extensions</div>
+      <div class="card">Nail Art & 3D Designs</div>
+      <div class="card">Hand Painting & Detailing</div>
+      <div class="card">French Tips & Ombré</div>
+      <div class="card">Gel Polish Application</div>
+      <div class="card">Cuticle Care & Prep</div>
+    </div>
+  </main>
+
+  <footer class="flex justify-between items-center py-4 px-6 bg-gray-800 border-t border-pink-300 text-sm flex-wrap text-white">
+    <p class="glow">© 2025 KrazyK’s Nails. All rights reserved.</p>
+    <a href="policies.html" class="btn-glow bg-pink-300 text-black px-4 py-1 rounded-full">Policies</a>
+  </footer>
+
+</body>
+</html>
