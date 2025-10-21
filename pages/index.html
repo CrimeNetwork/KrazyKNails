@@ -7,21 +7,26 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
   <style>
     /* Embedded CSS */
-    body { margin: 0; }
+    body { margin: 0; font-family: sans-serif; }
     .glow { text-shadow: 0 0 15px rgba(255,182,193,1); }
     .btn-glow { box-shadow: 0 0 20px rgba(255,182,193,1); transition: all 0.3s; }
     .btn-glow:hover { box-shadow: 0 0 30px rgba(255,182,193,1); background-color: #ffc0cb; color: black; }
     p, h2, h1, li, a { color: white; }
-    .card { background-color: #2d2d2d; border: 2px solid #ffc0cb; border-radius: 0.5rem; padding: 1rem; box-shadow: 0 0 20px rgba(255,182,193,0.5); transition: all 0.3s; }
-    .card:hover { box-shadow: 0 0 30px rgba(255,182,193,0.8); }
     nav a:hover { color: #ffc0cb; text-shadow: 0 0 10px rgba(255,182,193,1); }
-    main { padding-top: 100px; } /* Ensure content below fixed navbar */
+    main { padding-top: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: calc(100vh - 100px); }
+    /* Navbar styles */
+    nav { background-color: #2d2d2d; }
+    nav h1 { margin: 0; }
+    nav a { text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.25rem; }
+    nav a:hover { background-color: #ffc0cb; color: black; }
+    /* Footer styles */
+    footer { background-color: #2d2d2d; }
   </style>
 </head>
-<body class="bg-gray-800 text-white font-sans">
+<body class="bg-gray-800 text-white">
 
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-gray-800 shadow-md z-50">
+  <nav class="fixed top-0 left-0 w-full flex justify-between items-center p-4 shadow-md z-50">
     <h1 class="glow text-2xl font-bold">KrazyK's Nails</h1>
     <div class="flex flex-wrap gap-4 font-medium">
       <a href="index.html" class="glow">Home</a>
@@ -32,8 +37,8 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="flex flex-col items-center justify-center text-center px-6 py-12 min-h-screen">
-    <h2 class="text-5xl md:text-6xl font-extrabold glow mb-6">Welcome to KrazyK's Nails 💅</h2>
+  <main class="text-center px-6 py-12">
+    <h2 class="text-4xl md:text-6xl font-extrabold glow mb-6">Welcome to KrazyK's Nails 💅</h2>
     <p class="max-w-xl text-lg md:text-xl mb-8 opacity-90">
       Home-based nail artistry bringing creativity, color, and confidence to your fingertips.
     </p>
@@ -41,7 +46,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="flex flex-col md:flex-row justify-between items-center py-4 px-6 bg-gray-800 border-t border-pink-300 text-sm text-white">
+  <footer class="flex flex-col md:flex-row justify-between items-center py-4 px-6 border-t border-pink-300 text-sm text-white">
     <p class="glow mb-2 md:mb-0">© 2025 KrazyK’s Nails. All rights reserved.</p>
     <a href="policies.html" class="btn-glow bg-pink-300 text-black px-4 py-2 rounded-full">Policies</a>
   </footer>
