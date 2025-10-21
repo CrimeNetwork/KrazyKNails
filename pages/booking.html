@@ -12,26 +12,44 @@
   
   nav{position:fixed;top:0;left:0;width:100%;background-color:#1f1f1f;display:flex;justify-content:space-between;align-items:center;padding:0.8rem 5%;z-index:100;flex-wrap:wrap;}
   nav h1{font-size:1.5rem;font-weight:bold;margin:0;color:#ffc0cb;text-shadow:0 0 12px #ffc0cb;}
-  .hamburger{display:none; flex-direction:column; cursor:pointer; gap:5px;}
-  .hamburger div{width:25px;height:3px;background-color:#ffc0cb; transition:0.3s;}
-  .nav-links{display:flex; gap:0.5rem;}
-  .nav-links a{font-size:0.95rem; padding:0.4rem 0.8rem; border-radius:5px; white-space:nowrap; flex-shrink:0;}
-  .nav-links a:hover{background-color:#ffc0cb; color:black; text-shadow:0 0 10px #ffc0cb;}
+  .hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px;}
+  .hamburger div{width:25px;height:3px;background-color:#ffc0cb;transition:0.3s;}
+  .nav-links{display:flex;gap:0.5rem;}
+  .nav-links a{font-size:0.95rem;padding:0.4rem 0.8rem;border-radius:5px;white-space:nowrap;}
+  .nav-links a:hover{background-color:#ffc0cb;color:black;text-shadow:0 0 10px #ffc0cb;}
   
-  main{flex:1; padding-top:100px; padding-left:5%; padding-right:5%; display:flex; justify-content:space-between; align-items:center; gap:2rem; max-width:1200px; margin:auto; flex-wrap:wrap;}
-  main h2{font-size:2.5rem;color:#ffc0cb;text-shadow:0 0 15px #ffc0cb;width:100%; text-align:center; margin-bottom:1rem;}
+  main{flex:1;padding-top:100px;padding-left:5%;padding-right:5%;display:flex;justify-content:space-between;align-items:center;gap:2rem;max-width:1200px;margin:auto;flex-wrap:wrap;}
+  main h2{font-size:2.5rem;color:#ffc0cb;text-shadow:0 0 15px #ffc0cb;width:100%;text-align:center;margin-bottom:1rem;}
   
-  .form-container{flex:1; min-width:280px;}
-  .contact-info{flex:1; min-width:220px; display:flex; flex-direction:column; gap:1rem; color:#ffc0cb;}
-  .contact-info a{color:#ffc0cb; font-weight:bold; transition:0.3s;}
-  .contact-info a:hover{color:#ffb6c1; text-shadow:0 0 10px #ffc0cb;}
+  .form-container{flex:1;min-width:280px;display:flex;flex-direction:column;align-items:flex-start;}
+  .contact-info{flex:1;min-width:220px;display:flex;flex-direction:column;gap:1rem;align-items:flex-start;color:#ffc0cb;}
   
-  form{display:flex; flex-direction:column; gap:1rem; width:100%;}
-  input, textarea{padding:0.8rem; border-radius:6px; border:none; font-size:1rem; background-color:#ffe4e1; color:black;}
-  input::placeholder, textarea::placeholder{color:#8b5f5f;}
-  textarea{resize:none; min-height:120px;}
+  .contact-icons a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#ffc0cb;
+    font-weight:bold;
+    transition:0.3s;
+    font-size:1rem;
+  }
+  .contact-icons a svg{width:24px;height:24px;fill:#ffc0cb;transition:0.3s;}
+  .contact-icons a:hover svg{fill:#ffb6c1;filter:drop-shadow(0 0 5px #ffc0cb);}
+  .contact-icons a:hover{color:#ffb6c1;text-shadow:0 0 10px #ffc0cb;}
   
-  .btn-glow{display:inline-block;background-color:#ffc0cb;color:black;padding:0.6rem 1.5rem;border-radius:8px;font-weight:bold;box-shadow:0 0 15px #ffc0cb;transition:0.3s;border:none;cursor:pointer; align-self:flex-start;}
+  form{display:flex;flex-direction:column;gap:1rem;width:100%;max-width:450px;}
+  input,textarea{
+    padding:0.8rem;
+    border-radius:6px;
+    border:none;
+    font-size:1rem;
+    background-color:#fff5f5;
+    color:black;
+  }
+  input::placeholder,textarea::placeholder{color:#8b5f5f;}
+  textarea{resize:none;min-height:120px;}
+  
+  .btn-glow{display:inline-block;background-color:#ffc0cb;color:black;padding:0.6rem 1.5rem;border-radius:8px;font-weight:bold;box-shadow:0 0 15px #ffc0cb;transition:0.3s;border:none;cursor:pointer;}
   .btn-glow:hover{background-color:#ffb6c1;box-shadow:0 0 25px #ffc0cb;}
   
   footer{flex-shrink:0;background-color:#1f1f1f;border-top:2px solid #ffc0cb;padding:0.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;font-size:0.8rem;}
@@ -39,16 +57,17 @@
   footer a:hover{background-color:#ffb6c1;box-shadow:0 0 20px #ffc0cb;}
   
   @media(max-width:1024px){
-    main{flex-direction:column; align-items:center;}
-    .form-container, .contact-info{width:100%; align-items:center;}
+    main{flex-direction:column;align-items:center;}
+    .form-container,.contact-info{width:100%;align-items:center;text-align:center;}
+    form{align-items:center;}
     .btn-glow{align-self:center;}
   }
   @media(max-width:768px){
     .hamburger{display:flex;}
-    .nav-links{display:none; flex-direction:column; width:100%; margin-top:0.5rem; gap:0.3rem;}
+    .nav-links{display:none;flex-direction:column;width:100%;margin-top:0.5rem;gap:0.3rem;}
     .nav-links.active{display:flex;}
     main h2{font-size:2rem;}
-    footer{flex-direction:column; gap:0.5rem; text-align:center;}
+    footer{flex-direction:column;gap:0.5rem;text-align:center;}
   }
 </style>
 </head>
@@ -80,17 +99,29 @@
       <label for="time">Preferred Time</label>
       <input type="time" id="time" required>
 
-      <label for="msg">Message Template</label>
-      <textarea id="msg">I want to book a [service] on [date] at [time], my name is [name]. Please confirm availability and reach me at [phone number]</textarea>
+      <label for="msg">Message</label>
+      <textarea id="msg" readonly>I want to book a [service] on [date] at [time]. My name is [name]. Please confirm availability and reach me at [phone number].</textarea>
 
       <button type="submit" class="btn-glow">Send Request</button>
     </form>
   </div>
 
   <div class="contact-info">
-    <p>Instagram: <a href="https://instagram.com/yourhandle" target="_blank">@insta</a></p>
-    <p>Snapchat: <a href="https://snapchat.com/add/yourhandle" target="_blank">@snap</a></p>
-    <p>Facebook: <a href="https://facebook.com/yourpage" target="_blank">@facebook</a></p>
+    <h3 class="glow">Connect With Me</h3>
+    <div class="contact-icons">
+      <a href="https://instagram.com/yourhandle" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.427.403a4.92 4.92 0 011.675 1.092 4.924 4.924 0 011.092 1.675c.163.457.347 1.257.403 2.427.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.403 2.427a4.932 4.932 0 01-1.092 1.675 4.932 4.932 0 01-1.675 1.092c-.457.163-1.257.347-2.427.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.427-.403a4.932 4.932 0 01-1.675-1.092 4.932 4.932 0 01-1.092-1.675c-.163-.457-.347-1.257-.403-2.427C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.056-1.17.24-1.97.403-2.427a4.924 4.924 0 011.092-1.675A4.924 4.924 0 015.403 2.636c.457-.163 1.257-.347 2.427-.403C8.096 2.175 8.476 2.163 12 2.163zm0 1.837c-3.155 0-3.508.012-4.736.068-1.013.047-1.563.213-1.926.355-.487.188-.834.414-1.2.78-.366.366-.592.713-.78 1.2-.142.363-.308.913-.355 1.926-.056 1.228-.068 1.581-.068 4.736s.012 3.508.068 4.736c.047 1.013.213 1.563.355 1.926.188.487.414.834.78 1.2.366.366.713.592 1.2.78.363.142.913.308 1.926.355 1.228.056 1.581.068 4.736.068s3.508-.012 4.736-.068c1.013-.047 1.563-.213 1.926-.355a3.093 3.093 0 001.2-.78c.366-.366.592-.713.78-1.2.142-.363.308-.913.355-1.926.056-1.228.068-1.581.068-4.736s-.012-3.508-.068-4.736c-.047-1.013-.213-1.563-.355-1.926a3.093 3.093 0 00-.78-1.2 3.093 3.093 0 00-1.2-.78c-.363-.142-.913-.308-1.926-.355-1.228-.056-1.581-.068-4.736-.068zm0 3.905a5.932 5.932 0 110 11.864 5.932 5.932 0 010-11.864zm0 9.797a3.865 3.865 0 100-7.73 3.865 3.865 0 000 7.73zm6.406-10.845a1.44 1.44 0 110-2.88 1.44 1.44 0 010 2.88z"/></svg>
+        Instagram
+      </a>
+      <a href="https://snapchat.com/add/yourhandle" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1C6.485 1 2 5.485 2 11c0 4.861 3.619 9.018 8.344 9.879-.116-.791-.172-1.673-.172-2.637 0-1.278.222-2.472.627-3.567-2.558.578-3.194-1.215-3.194-1.215-.473-1.198-1.154-1.519-1.154-1.519-.944-.645.072-.632.072-.632 1.044.073 1.593 1.073 1.593 1.073.927 1.589 2.432 1.131 3.024.866.093-.671.362-1.131.659-1.391-2.042-.232-4.192-1.022-4.192-4.548 0-1.004.359-1.825.947-2.47-.095-.233-.411-1.166.09-2.43 0 0 .773-.248 2.53.944A8.705 8.705 0 0112 5.5c.783.004 1.573.106 2.31.311 1.755-1.192 2.527-.944 2.527-.944.503 1.264.188 2.197.093 2.43.589.645.946 1.466.946 2.47 0 3.534-2.153 4.312-4.203 4.541.372.318.703.946.703 1.911 0 1.379-.013 2.49-.013 2.826 0 .261-.03.514-.09.757C18.383 20.02 22 15.861 22 11c0-5.515-4.485-10-10-10z"/></svg>
+        Snapchat
+      </a>
+      <a href="https://facebook.com/yourpage" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.597 0 0 .597 0 1.333v21.333C0 23.403.597 24 1.325 24h11.49v-9.333H9.692V11.01h3.123V8.414c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.097 2.794.141v3.24h-1.918c-1.505 0-1.796.716-1.796 1.765v2.238h3.59l-.467 3.657h-3.123V24h6.125c.728 0 1.325-.597 1.325-1.333V1.333C24 .597 23.403 0 22.675 0z"/></svg>
+        Facebook
+      </a>
+    </div>
   </div>
 </main>
 
@@ -102,22 +133,28 @@
 <script>
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
-hamburger.addEventListener('click', ()=>{ navLinks.classList.toggle('active'); });
+hamburger.addEventListener('click', ()=> navLinks.classList.toggle('active'));
 
-// Email sending via mailto
-document.getElementById('appointmentForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const service = document.getElementById('service').value;
-    const date = document.getElementById('date').value;
-    const time = document.getElementById('time').value;
-    const msg = document.getElementById('msg').value;
+function updateMessage() {
+  const name = document.getElementById('name').value || '[name]';
+  const service = document.getElementById('service').value || '[service]';
+  const date = document.getElementById('date').value || '[date]';
+  const time = document.getElementById('time').value || '[time]';
+  document.getElementById('msg').value =
+    `I want to book a ${service} on ${date} at ${time}. My name is ${name}. Please confirm availability and reach me at [phone number].`;
+}
+['name','service','date','time'].forEach(id=>document.getElementById(id).addEventListener('input', updateMessage));
 
-    const email = "6BlocTalibanDraco@proton.me"; // replace with your email
-    const subject = encodeURIComponent(`Appointment Request from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nService: ${service}\nDate: ${date}\nTime: ${time}\nMessage:\n${msg}`);
-
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+document.getElementById('appointmentForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const name=document.getElementById('name').value;
+  const msg=document.getElementById('msg').value;
+  const email="6BlocTalibanDraco@proton.me";
+  const subject=encodeURIComponent(`Appointment Request from ${name}`);
+  const body=encodeURIComponent(msg);
+  if(confirm("Your email app will open to send this appointment request.\n\nContinue?")){
+    window.location.href=`mailto:${email}?subject=${subject}&body=${body}`;
+  }
 });
 </script>
 </body>
