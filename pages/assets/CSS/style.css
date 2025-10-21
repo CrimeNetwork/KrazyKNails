@@ -1,0 +1,42 @@
+/* style.css */
+
+/* Glow effect for headers and links */
+.glow {
+  text-shadow: 0 0 15px rgba(255,182,193,1);
+}
+
+/* Buttons with pink glow and hover effect */
+.btn-glow {
+  box-shadow: 0 0 20px rgba(255,182,193,1);
+  transition: all 0.3s;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(255,182,193,1);
+  background-color: #ffc0cb;
+  color: black;
+}
+
+/* Make all text readable on dark background */
+p, h2, h1, li, a {
+  color: white;
+}
+
+/* Cards for gallery and skills */
+.card {
+  background-color: #2d2d2d;
+  border: 2px solid #ffc0cb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(255,182,193,0.5);
+  transition: all 0.3s;
+}
+.card:hover {
+  box-shadow: 0 0 30px rgba(255,182,193,0.8);
+}
+
+/* Navbar links hover */
+nav a:hover {
+  color: #ffc0cb;
+  text-shadow: 0 0 10px rgba(255,182,193,1);
+}
